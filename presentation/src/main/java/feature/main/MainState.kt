@@ -33,10 +33,12 @@ sealed class MainPage
 data class Inbox(
         val showClearButton: Boolean = false,
         val data: Flowable<List<Conversation>>? = null,
+        val selected: Int = 0,
         val showArchivedSnackbar: Boolean = false) : MainPage()
 
 data class Archived(
-        val data: Flowable<List<Conversation>>? = null) : MainPage()
+        val data: Flowable<List<Conversation>>? = null,
+        val selected: Int = 0) : MainPage()
 
 data class Scheduled(
         val data: Any? = null) : MainPage()

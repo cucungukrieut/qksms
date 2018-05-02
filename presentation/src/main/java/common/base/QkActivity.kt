@@ -24,6 +24,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.moez.QKSMS.R.id.toolbarTitle
 import common.Navigator
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
@@ -59,6 +60,10 @@ abstract class QkActivity<VM : QkViewModel<*, *>> : AppCompatActivity() {
         super.setContentView(layoutResID)
         setSupportActionBar(toolbar)
         title = title // The title may have been set before layout inflation
+    }
+
+    override fun setTitle(titleId: Int) {
+        title = getString(titleId)
     }
 
     override fun setTitle(title: CharSequence?) {
